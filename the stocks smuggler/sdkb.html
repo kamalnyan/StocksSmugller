@@ -1,0 +1,13 @@
+var myHeaders = new Headers();
+myHeaders.append("apikey", "YGHOri7vOZU2EdIdzcEGGSKZ93BNj8kQ");
+
+var requestOptions = {
+  method: 'GET',
+  redirect: 'follow',
+  headers: myHeaders
+};
+
+fetch("https://api.apilayer.com/world_news/extract-news?url=https%3A%2F%2Fsteamcommunity.com%2Fsharedfiles%2Ffiledetails%2F%3Fid%3D2862121823&analyze=true", requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
